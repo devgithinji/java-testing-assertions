@@ -2,6 +2,7 @@ package org.densoft;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.EnumSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -46,6 +47,14 @@ class ParameterizedDemoTest {
     void testWithCsvSource(String fruit, int rank) {
         assertNotNull(fruit);
         assertNotEquals(0, rank);
+    }
+
+
+    @DisplayName("CSV from file test ")
+    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+    @CsvFileSource(resources = "/input.csv", numLinesToSkip = 1)
+    void csvFileInputCSV(String stateName, int val1, int val2) {
+        System.out.println(stateName + " = " + val1 + ":" + val2);
     }
 
 
