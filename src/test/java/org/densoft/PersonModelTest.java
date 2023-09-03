@@ -14,7 +14,6 @@ class PersonModelTest implements Model {
 
     @RepeatedTest(value = 10, name ="{displayName} : {currentRepetition} of {totalRepetitions}" )
     @DisplayName("My repeated test")
-    @Test
     void repeatedTest(RepetitionInfo repeatedTest, TestInfo testInfo) {
         System.out.println(repeatedTest);
         System.out.println(testInfo);
