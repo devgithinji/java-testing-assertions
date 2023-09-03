@@ -12,11 +12,17 @@ class PersonModelTest implements Model {
         Assertions.assertEquals("Dennis", person.getFirstName());
     }
 
-    @RepeatedTest(value = 10, name ="{displayName} : {currentRepetition} of {totalRepetitions}" )
+    @RepeatedTest(value = 10, name = "{displayName} : {currentRepetition} of {totalRepetitions}")
     @DisplayName("My repeated test")
     void repeatedTest(RepetitionInfo repeatedTest, TestInfo testInfo) {
         System.out.println(repeatedTest);
         System.out.println(testInfo);
         System.out.println("repeated test");
+    }
+
+    @RepeatedTest(5)
+    void repeatedTestWithDI(TestInfo testInfo, RepetitionInfo repetitionInfo) {
+        System.out.println(testInfo);
+        System.out.println(repetitionInfo);
     }
 }
