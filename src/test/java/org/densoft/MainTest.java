@@ -1,6 +1,8 @@
 package org.densoft;
 
 import org.assertj.core.api.Assertions;
+import org.hamcrest.CoreMatchers;
+import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -10,6 +12,8 @@ import java.util.concurrent.CountDownLatch;
 import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
 import static org.assertj.core.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.*;
+import static org.hamcrest.MatcherAssert.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
@@ -83,6 +87,7 @@ class MainTest {
             return "a result";
         });
         assertEquals("a result", actualResult);
+        assertThat(person.getFirstName(), is("Dennis"));
     }
 
     @Test
