@@ -1,5 +1,6 @@
 package org.densoft;
 
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -108,6 +109,11 @@ class MainTest {
             // Simulate task that takes more than 10 ms.
             new CountDownLatch(1).await();
         });
+    }
+
+    @Test
+    void testAssumptionTrue(){
+        Assumptions.assumeTrue("Dennis".equalsIgnoreCase(System.getenv("USER")));
     }
 
     private static String greeting() {
