@@ -1,3 +1,5 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/devgithinji/java-testing-assertions/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/devgithinji/java-testing-assertions/tree/master)
+
 # Java Testing Assertions
 
 This README provides an overview of common ways to make assertions in Java testing using various testing frameworks and libraries. Making assertions is a crucial aspect of writing effective unit tests to verify the correctness of your code.
