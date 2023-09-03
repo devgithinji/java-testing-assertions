@@ -1,5 +1,6 @@
 package org.densoft;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -8,6 +9,7 @@ import java.util.concurrent.CountDownLatch;
 
 import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
@@ -20,6 +22,7 @@ class MainTest {
         assertEquals(2, calculator.add(1, 1));
         assertEquals(4, calculator.multiply(2, 2), "optional failure message");
         assertTrue('a' < 'b', "message");
+        assertThat(4).isEqualTo(calculator.multiply(2, 2));
     }
 
     @Test
@@ -99,6 +102,7 @@ class MainTest {
             Thread.sleep(100);
         });
     }
+
     @Disabled("test disabled")
     @Test
     void timeoutExceededWithPreemptiveTermination() {
@@ -112,7 +116,7 @@ class MainTest {
     }
 
     @Test
-    void testAssumptionTrue(){
+    void testAssumptionTrue() {
         Assumptions.assumeTrue("Dennis".equalsIgnoreCase(System.getenv("USER")));
     }
 
