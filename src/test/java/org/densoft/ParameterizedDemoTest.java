@@ -72,4 +72,12 @@ class ParameterizedDemoTest {
     }
 
 
+    @DisplayName("Custom Provider test ")
+    @ParameterizedTest(name = "{displayName} - [{index}] {arguments}")
+    @ArgumentsSource(CustomArgsProvider.class)
+    void fromCustomProviderTest(String stateName, int val1, int val2) {
+        System.out.println(stateName + " = " + val1 + ":" + val2);
+    }
+
+
 }
