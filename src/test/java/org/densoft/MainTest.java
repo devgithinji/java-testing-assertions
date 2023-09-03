@@ -1,8 +1,5 @@
 package org.densoft;
 
-import org.assertj.core.api.Assertions;
-import org.hamcrest.CoreMatchers;
-import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
@@ -11,9 +8,9 @@ import java.util.concurrent.CountDownLatch;
 
 import static java.time.Duration.ofMillis;
 import static java.time.Duration.ofMinutes;
-import static org.assertj.core.api.Assertions.*;
-import static org.hamcrest.CoreMatchers.*;
-import static org.hamcrest.MatcherAssert.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.hamcrest.CoreMatchers.is;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 class MainTest {
