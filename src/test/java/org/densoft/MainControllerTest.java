@@ -2,7 +2,6 @@ package org.densoft;
 
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.CountDownLatch;
@@ -14,8 +13,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
-@Tag("main")
-class MainTest {
+class MainControllerTest implements Controller {
 
     private final Person person = new Person("Dennis", "Githinji");
     private final Calculator calculator = new Calculator();
@@ -92,7 +90,7 @@ class MainTest {
     @Test
     void timeoutNotExceededWithMethod() {
         // The following assertion invokes a method reference and returns an object.
-        String actualGreeting = assertTimeout(ofMinutes(2), MainTest::greeting);
+        String actualGreeting = assertTimeout(ofMinutes(2), MainControllerTest::greeting);
         assertEquals("Hello, World!", actualGreeting);
     }
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 @Tag("controllers")
-public class ControllerTest {
+class PersonModelTest implements Model {
 
     Person person = new Person("Dennis", "Githinji");
 

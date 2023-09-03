@@ -1,8 +1,11 @@
 package org.densoft;
 
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
-public class CalculatorTest {
+class CalculatorControllerTest implements Controller {
 
     @BeforeEach
     void beforeEach() {
