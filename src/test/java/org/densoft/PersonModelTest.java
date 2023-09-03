@@ -1,8 +1,6 @@
 package org.densoft;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 @Tag("controllers")
 class PersonModelTest implements Model {
@@ -12,5 +10,14 @@ class PersonModelTest implements Model {
     @Test
     void testPerson() {
         Assertions.assertEquals("Dennis", person.getFirstName());
+    }
+
+    @RepeatedTest(value = 10, name ="{displayName} : {currentRepetition} of {totalRepetitions}" )
+    @DisplayName("My repeated test")
+    @Test
+    void repeatedTest(RepetitionInfo repeatedTest, TestInfo testInfo) {
+        System.out.println(repeatedTest);
+        System.out.println(testInfo);
+        System.out.println("repeated test");
     }
 }
